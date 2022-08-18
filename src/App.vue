@@ -1,5 +1,5 @@
 <template>
-
+<div>
   <p>Array:</p>
   <p>{{ theArray }}</p>
   <p>Colors:</p>
@@ -14,7 +14,7 @@
     :disabled="btnIsDisabled"
     @click="startCounter"
   >Restart</button>
-
+</div>
 </template>
 
 
@@ -41,18 +41,15 @@ export default {
     }
   },
 
-  computed: {
-    watchArray() {
-      return this.theArray.slice();
-    },
-
-  },
 
   watch: {
-    watchArray(newVal, oldVal) {
-      console.log(newVal)
+    theArray: {
+      handler() {
       this.colorArr = this.theArray.map(item => this.numbers[item]);
+    },
+    deep:true
     }
+    
   },
 
   methods: {
