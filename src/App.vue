@@ -13,7 +13,7 @@
   <button
     :disabled="btnIsDisabled"
     @click="startCounter"
-  >Restart</button>
+  >Restart!</button>
 </div>
 </template>
 
